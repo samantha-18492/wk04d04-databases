@@ -1,0 +1,15 @@
+.animal-container {
+  margin: 15px;
+  border: tomato 2px solid;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
