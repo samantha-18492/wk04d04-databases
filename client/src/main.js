@@ -3,7 +3,9 @@ const animalDisplaySection = document.getElementById("app");
 
 //create a function that makes a request to your server
 async function fetchAnimals() {
-  const response = await fetch(`http://localhost:8080/animals`);
+  const response = await fetch(
+    `https://wk04d04-databases-server.onrender.com/animals`
+  );
   const animals = await response.json();
   //invoke function that is declared below this one
   createAnimals(animals);
@@ -43,11 +45,14 @@ form.addEventListener("submit", async (event) => {
   const userAnimal = Object.fromEntries(data);
 
   //now let's send that info to the database using a post route
-  const response = await fetch("http://localhost:8080/animals", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userAnimal),
-  });
+  const response = await fetch(
+    "https://wk04d04-databases-server.onrender.com/animals",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userAnimal),
+    }
+  );
 });
